@@ -29,5 +29,5 @@ def create_app(config_type):  # config_type can be dev, test, or prod
 
     from app.auth import authentication
     app.register_blueprint(authentication)
-
+    app.config['SECRET_KEY'] = 'secret'
     return app

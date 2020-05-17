@@ -14,12 +14,12 @@ def email_exists(form, field):
     if email:
         raise ValidationError('Email Already Exists')
 
-class RegistraionForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired(),
-                                           Length(3,15, message='between 3 to 15 characters'),user_name_exists])
-    email = StringField('E-mail',validators=[DataRequired(), Email(), email_exists])
+class RegistrationForm(FlaskForm):
+    name = StringField('Whats your Name', validators=[DataRequired(),  Length(3,15, message='between 3 to 15 characters'),user_name_exists])
+    email = StringField('Enter your E-mail',validators=[DataRequired(), Email(), email_exists])
     password = PasswordField('Password', validators=[DataRequired()])
     confirm = PasswordField('Confirm', validators=[DataRequired()])
+
     submit = SubmitField('Register')
 
 
